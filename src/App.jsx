@@ -9,6 +9,7 @@ function App() {
   const [articles, setArticles] = useState([])
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true)
+  const [currentUser] = useState("cooljmessy")
 
   useEffect(() => {
     setLoading(true)
@@ -33,7 +34,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home articles={articles} />}></Route>
-        <Route path="/articles/:article_id" element={<ArticleCard />}></Route>
+        <Route path="/articles/:article_id" element={<ArticleCard currentUser={currentUser} />}></Route>
         </Routes>
         </Router>
       
