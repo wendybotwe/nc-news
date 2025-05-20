@@ -11,7 +11,7 @@ function Home({ articles }) {
         <div className="articles-grid">{articles.map((article) => (<div key={article.article_id} className="article-card">
           <h3 className="article-title">{article.title}</h3>
           <p className="article-meta"><strong>Author</strong> {article.author} | <strong>Topic</strong> {article.topic}</p>
-          <Link to={`/articles/${article.article_id}`}>Read More</Link>
+          <Link to={`/articles/${article.article_id}`}>Read article</Link>
         </div>
         ))}
         </div>
