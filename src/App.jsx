@@ -3,6 +3,7 @@ import './App.css'
 import { getArticles } from "./api"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './components/Home'
+import ArticleCard from "./components/ArticleCard"
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -28,11 +29,11 @@ function App() {
   return (
     <Router>  
       <div className="app-container">
-        <p>placeholder text for Wendy's NC News App</p>
+        <p>This is going to be Wendy's NC News NavBar</p>
       </div>
       <Routes>
         <Route path="/" element={<Home articles={articles} />}></Route>
-
+        <Route path="/articles/:article_id" element={<ArticleCard />}></Route>
         </Routes>
         </Router>
       
