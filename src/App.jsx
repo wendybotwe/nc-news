@@ -18,7 +18,7 @@ function App() {
       setLoading(false)
     })
       .catch((err) => {
-        console.log(err, "is the error in useEffect")
+        console.log(err)
         setError(true)
         setLoading(false)
     })
