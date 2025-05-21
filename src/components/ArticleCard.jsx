@@ -105,6 +105,7 @@ function ArticleCard( {currentUser }) {
         })}
       </ul>)}
       <h3>Post your comment</h3>
+      {posting && <p style={{ colour: "green"}}>Your comment is being posted!</p>}
       <form onSubmit={handleSubmit} className="comment-form">
         <p>Commenting as {currentUser}</p>
         <textarea
