@@ -39,3 +39,7 @@ export const postCommentByArticleId = (article_id, username, body) => {
     return res.data.comment
 })
 }
+
+export const deleteCommentbyId = (comment_id) => {
+  return newsApi.delete(`/comments/${comment_id}`)
+}
