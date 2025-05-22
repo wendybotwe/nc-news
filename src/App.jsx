@@ -4,6 +4,8 @@ import { getArticles } from "./api"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Home from './components/Home'
 import ArticleCard from "./components/ArticleCard"
+import TopicPage from "./components/TopicPage"
+import Navbar from "./components/Navbar"
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -30,11 +32,12 @@ function App() {
   return (
     <Router>  
       <div className="app-container">
-        <p>This is going to be Wendy's NC News NavBar</p>
+        <Navbar />
       </div>
       <Routes>
         <Route path="/" element={<Home articles={articles} />}></Route>
         <Route path="/articles/:article_id" element={<ArticleCard currentUser={currentUser} />}></Route>
+        <Route path="/topics/:topic_slug" element={<TopicPage />}></Route>
         </Routes>
         </Router>
       
