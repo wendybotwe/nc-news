@@ -17,6 +17,7 @@ function ArticleCard({ currentUser }) {
   const [deletingCommentIds, setDeletingCommentIds] = useState([])
   const [deleteMessage, setDeleteMessage] = useState("")
 
+
   useEffect(() => {
     setLoading(true);
     Promise.all([
