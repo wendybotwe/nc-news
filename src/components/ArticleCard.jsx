@@ -37,7 +37,7 @@ function ArticleCard({ currentUser }) {
   }, [article_id]);
 
   if (loading) return <p>Loading an excellent article for you...</p>
-  if (error) return <p>Sorry, article or comments could not be loaded.</p>
+  if (error) return <p>Sorry, article could not be found.</p>
   if (!article) return null;
 
   const handleVote = (change) => {
@@ -68,6 +68,9 @@ function ArticleCard({ currentUser }) {
         setComments((current) => [postedComment, ...current])
         setNewComment({ body: "" })
         setPosting(false)
+      })
+      .then(() => {
+        window.location.reload()
       })
       .catch((err) => {
         console.log(err)
@@ -116,6 +119,27 @@ function ArticleCard({ currentUser }) {
           ⬇️ Downvote
         </button>
         {voteError && (<p style={{ color: 'red' }}> Vote failed to register. Please try again later.</p>)}
+        <div className="comment-section">
+        <h3>Post your comment</h3>
+          {posting && <p style={{ colour: "green" }}>Your comment is being posted!</p>}
+          <div className="comment-form">
+        <form onSubmit={handleSubmit} >
+          <p>Commenting as {currentUser}</p>
+          <textarea className="comment-box"
+            placeholder="Your comment"
+            value={newComment.body}
+            onChange={(event) => setNewComment({ ...newComment, body: event.target.value })
+            }
+            required
+          />
+          <button type="submit" disabled={posting}>
+            {posting ? "posting your comment..." : "Submit"}
+          </button>
+          {postError && <p style={{ color: "red" }}>{postError}</p>}
+            </form>
+            </div>
+        </div>
+        <div className="comments-list">
         <h3>Comments</h3>
         {comments.length === 0 ? (<p>No comments yet</p>) : (<ul className="comments-list">
           {comments.map((comment) => {
@@ -134,23 +158,8 @@ function ArticleCard({ currentUser }) {
               </li>
             )
           })}
-        </ul>)}
-        <h3>Post your comment</h3>
-        {posting && <p style={{ colour: "green" }}>Your comment is being posted!</p>}
-        <form onSubmit={handleSubmit} className="comment-form">
-          <p>Commenting as {currentUser}</p>
-          <textarea
-            placeholder="Your comment"
-            value={newComment.body}
-            onChange={(event) => setNewComment({ ...newComment, body: event.target.value })
-            }
-            required
-          />
-          <button type="submit" disabled={posting}>
-            {posting ? "posting your comment..." : "Submit"}
-          </button>
-          {postError && <p style={{ color: "red" }}>{postError}</p>}
-        </form>
+          </ul>)}
+          </div>
       </div>
     )
   }

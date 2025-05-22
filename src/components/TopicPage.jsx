@@ -24,7 +24,7 @@ function TopicPage() {
   }, [topic_slug])
 
   if (loading) return <p>Loading articles for {topic_slug}</p>
-  if (error) return <p>Sorry, unable to load articles for this topic.</p>
+  if (error) return <p>Sorry, unable to load articles.</p>
 
   return (
     <div className="topic-page">
