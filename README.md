@@ -1,12 +1,57 @@
-# React + Vite
+# Welcome to Wendy's NC News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Wendy's NC News is a hosted front and backend project created as part of the Northcoders Software Development Bootcamp. Users can view articles and the associated comments as well as being able to comment on those articles.
 
-Currently, two official plugins are available:
+## Deployed version
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://wendy-nc-news.netlify.app/
 
-## Expanding the ESLint configuration
+## Set up info for the BackEnd
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Node
+
+Install node.js
+
+Minimum requirements: v23.9.0
+
+(Check which version you currently have installed using `node -v`)
+
+### Postgres
+
+Minimum requirements: v8.13.3
+
+(Check which version you currently have installed using `postgres -V`)
+
+### GitHub
+
+https://github.com/wendybotwe/seeding-nc-news
+
+Clone this repo using
+
+`git clone https://github.com/wendybotwe/seeding-nc-news`
+
+### Install dependencies
+
+`npm install`
+
+### Create .env files
+
+.env.test
+
+`PGDATABASE=nc_news_test`
+
+.env.development
+
+`PGDATABASE=nc_news`
+
+### Seed local database
+
+To run the run-seed script (which calls the seed function with development data) use:
+
+`npm run seed-dev`
+
+### Run tests
+
+`npm test`
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/)
