@@ -88,3 +88,21 @@
 .navbar-links li a:hover {
   text-decoration: underline;
 }
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  width: 100%;
+}
+
+.comment-form {
+  width: 100%;
+}
+
+.comment-box {
+  width: 40%;
+  height: 6rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
