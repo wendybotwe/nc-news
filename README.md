@@ -1,6 +1,6 @@
 # Welcome to Wendy's NC News
 
-Wendy's NC News is a hosted front and backend project created as part of the Northcoders Software Development Bootcamp. Users can view articles and the associated comments as well as being able to comment on those articles.
+Wendy's NC News is a hosted front and backend project created as part of the Northcoders Software Development Bootcamp. Users can view articles (and the associated comments) as well as being able to comment on those articles. Users can also up and downvote articles.
 
 ## Deployed version
 
@@ -24,7 +24,7 @@ Minimum requirements: v8.13.3
 
 ### GitHub
 
-https://github.com/wendybotwe/seeding-nc-news
+Backend Repo: https://github.com/wendybotwe/seeding-nc-news
 
 Clone this repo using
 
